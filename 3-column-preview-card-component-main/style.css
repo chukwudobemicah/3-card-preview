@@ -1,0 +1,156 @@
+/* RESETS */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+}
+body {
+  background-color: #000;
+}
+/* VARIABLES */
+:root {
+}
+/* GENERAL STYLES */
+.container {
+  width: 70%;
+  height: 70vh;
+  /* background-color: #333; */
+  color: white;
+  display: flex;
+  margin: 75px auto;
+}
+.container__sedans,
+.container__suvs,
+.container__luxury {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  min-height: 400px;
+  background-attachment: fixed;
+}
+.container__sedans,
+.container__suvs {
+  animation: slidein-left 1s ease-in;
+  transition: all 1s ease-in;
+}
+.container__luxury {
+  animation: slidein-right 1s ease-in;
+  transition: all 1s ease-in;
+}
+/* DETAILED STYLES */
+.container__sedans {
+  background-color: orange;
+}
+.container__suvs {
+  background-color: green;
+}
+.container__luxury {
+  background-color: darkgreen;
+}
+button {
+  width: 120px;
+  padding: 15px;
+  border-radius: 50px;
+  height: 40px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container__sedans > button {
+  color: orange;
+}
+.container__suvs > button {
+  color: green;
+}
+.container__luxury > button {
+  color: darkgreen;
+}
+
+/* HOVER EFFECTS */
+button:hover {
+  background-color: #fff;
+  transition: all 0.3s ease-out;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: rgba(255, 255, 255, 0.301);
+}
+.container__luxury:active,
+.container__sedans:active,
+.container__suvs:active,
+.container__luxury:focus,
+.container__sedans:focus,
+.container__suvs:focus {
+  /* PENDING DONT FORGET RO MAKE IT TRANSPARENt BACKGROUND */
+  background-color: rgba(255, 255, 255, 0.034);
+  border: 1px solid #fff;
+  transition: all 0.2s ease-out;
+  transform: translateX(20px) translateY(-20px);
+}
+h1:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+}
+img:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in;
+}
+@media screen and (max-width: 375px) {
+  body {
+    height: 200vh;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .container__luxury:active,
+  .container__sedans:active,
+  .container__suvs:active,
+  .container__luxury:focus,
+  .container__sedans:focus,
+  .container__suvs:focus {
+    /* PENDING DONT FORGET RO MAKE IT TRANSPARENt BACKGROUND */
+    background-color: rgba(255, 255, 255, 0.034);
+    border: 1px solid #fff;
+    transition: all 0.2s ease-out;
+    transform: translateX(20px) translateY(-20px);
+  }
+  .container__sedans,
+  .container__luxury {
+    animation: slidein-left 1s ease-in;
+    transition: all 1s ease-in;
+  }
+  .container__suvs {
+    animation: slidein-right 1s ease-in;
+    transition: all 1s ease-in;
+  }
+}
+/* ANIMATIONS */
+@keyframes slidein-left {
+  0% {
+    transform: translatex(-40px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+@keyframes slidein-right {
+  0% {
+    transform: translatex(40px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
